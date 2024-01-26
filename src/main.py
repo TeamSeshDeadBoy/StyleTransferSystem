@@ -3,10 +3,10 @@ import uvicorn
 
 from redis import Redis
 from rq import Queue
-from worker import calculator, picture
 
-from status_by_id import get_job_status
-from result_by_id import get_job_result
+from utils.result_by_id import get_job_result
+from utils.status_by_id import get_job_status
+from utils.worker import calculator, picture
 
 
 q = Queue(connection=Redis())
