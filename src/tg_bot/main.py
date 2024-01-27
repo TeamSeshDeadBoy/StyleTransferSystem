@@ -1,7 +1,11 @@
 import telebot
+from dotenv.main import load_dotenv
 import os
 
-bot = telebot.TeleBot("6893066835:AAH-PP6Ig9GydrsX08U1Vx6KIsGRDiFVkEw", parse_mode="HTML")
+load_dotenv()
+api_token = os.environ["API_TOKEN_TELEGRAM"]
+
+bot = telebot.TeleBot(api_token, parse_mode="HTML")
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
