@@ -6,13 +6,12 @@ from rq import Queue
 
 from utils.result_by_id import get_job_result
 from utils.status_by_id import get_job_status
-from utils.worker import calculator, picture
-
+from worker import calculator, picture
 
 q = Queue(connection=Redis())
 
-
 app = FastAPI()
+
 
 @app.get("/")
 async def root():
@@ -48,13 +47,16 @@ async def job_result(idd):
 async def jobs():
     return {"jobs": q.jobs}
 
+
 @app.get("/jobs/finished")
 async def jobs():
     return {"jobs": q.finished_job_registry.get_job_ids()}
+
 
 @app.get("/jobs/failed")
 async def jobs():
     return {"jobs": q.failed_job_registry.get_job_ids()}
 
+
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
