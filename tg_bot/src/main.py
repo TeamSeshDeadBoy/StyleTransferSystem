@@ -8,6 +8,7 @@ import base64
 load_dotenv()
 api_token = os.environ["API_TOKEN_TELEGRAM"]
 url = os.environ["BACKEND_ADRESS"]
+volume_path = os.environ["VOLUME_ADRESS"]
 
 bot = telebot.TeleBot(api_token, parse_mode="HTML")
 
@@ -23,13 +24,13 @@ def get_broadcast_picture(message):
     file_path = bot.get_file(message.document.file_id).file_path
     file = bot.download_file(file_path)
     try:
-        os.mkdir('./data/user_' + user_id)
+        os.mkdir(volume_path+'user_' + user_id)
     except:
         print("Попытка повторного создания папки пользователя")
     else:
         print("Создание папки для user: "+user_id)
         
-    with open('./data/user_' + user_id + '/' + str(file_path.split('/')[1]), "wb") as new_file:
+    with open(volume_path+'user_' + user_id + '/' + str(file_path.split('/')[1]), "wb") as new_file:
         new_file.write(file)
 
 
@@ -41,10 +42,10 @@ def get_broadcast_picture(message):
     file = bot.download_file(file_path)
     print(file_path.split('/')[1])
     try:
-        os.mkdir('./data/user_' + user_id)
+        os.mkdir(volume_path+'user_' + user_id)
     except:
         print("Попытка повторного создания папки пользователя")
-    with open('./data/user_' + user_id + '/' + str(file_path.split('/')[1]), "wb") as new_file:
+    with open(volume_path+'user_' + user_id + '/' + str(file_path.split('/')[1]), "wb") as new_file:
         new_file.write(file)
 
 

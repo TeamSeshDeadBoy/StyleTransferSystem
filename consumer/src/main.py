@@ -9,8 +9,14 @@ from utils.status_by_id import get_job_status
 from worker import calculator, picture
 
 
+from dotenv.main import load_dotenv
+import os
+load_dotenv()
 
-q = Queue(connection=Redis())
+
+redis_host = os.environ["REDIS_HOST"]
+redis_port = os.environ["REDIS_PORT"]
+q = Queue(connection=Redis(host=redis_host, port=int(redis_port)))
 
 
 app = FastAPI()
@@ -58,9 +64,7 @@ async def jobs():
     return {"jobs": q.failed_job_registry.get_job_ids()}
 
 
-from dotenv.main import load_dotenv
-import os
-load_dotenv()
+
 ip_adress = os.environ["BACKEND_ADRESS_IP"]
 port = os.environ["BACKEND_ADRESS_PORT"]
 

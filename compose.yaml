@@ -1,0 +1,22 @@
+version: "1.0"
+services:
+  consumer-fastapi:
+    build: consumer
+    volumes:
+      - user_data:/data/user_data
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+  tg_bot:
+    build: tg_bot
+    volumes:
+      - user_data:/data/user_data
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+    ports:
+      - "6379:6379"
+volumes:
+  user_data:
+    driver: local
