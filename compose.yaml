@@ -4,6 +4,7 @@ services:
     build: consumer
     volumes:
       - user_data:/data/user_data
+      - models:/data/models
     ports:
       - "8000:8000"
     depends_on:
@@ -19,4 +20,6 @@ services:
       - "6379:6379"
 volumes:
   user_data:
+    driver: local
+  models:
     driver: local
