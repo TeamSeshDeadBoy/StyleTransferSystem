@@ -1,4 +1,4 @@
-FROM base_python:1
+FROM base_python/1
 # RUN apk update && apk add bash
 COPY . /app
 WORKDIR /app

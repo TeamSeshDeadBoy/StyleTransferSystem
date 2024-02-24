@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1.5
 # FROM python:3.9-alpine3.13
-FROM base_python:1
+FROM base_python/1
 # RUN apk add bash
 COPY . /app
 WORKDIR /app
