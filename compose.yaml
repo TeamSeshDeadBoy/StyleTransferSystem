@@ -1,6 +1,12 @@
 version: "1.0"
 services:
   consumer-fastapi:
+    environment:
+      - BACKEND_ADRESS_IP = ${BACKEND_ADRESS_IP}
+      - BACKEND_ADRESS_PORT = ${BACKEND_ADRESS_PORT}
+      - REDIS_HOST = ${REDIS_HOST}
+      - REDIS_PORT = ${REDIS_PORT}
+      - VOLUME_ADRESS = ${VOLUME_ADRESS}
     build: consumer
     volumes:
       - user_data:/data/user_data
@@ -10,6 +16,10 @@ services:
     depends_on:
       - redis
   tg_bot:
+    environment:
+      - API_TOKEN_TELEGRAM = ${API_TOKEN_TELEGRAM}
+      - BACKEND_ADRESS = ${BACKEND_ADRESS}
+      - VOLUME_ADRESS =  ${VOLUME_ADRESS}
     build: tg_bot
     volumes:
       - user_data:/data/user_data
