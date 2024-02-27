@@ -6,9 +6,9 @@ import time
 import base64
 
 load_dotenv()
-api_token = os.environ["API_TOKEN_TELEGRAM"]
-url = os.environ["BACKEND_ADRESS"]
-volume_path = os.environ["VOLUME_ADRESS"]
+api_token = os.getenv("API_TOKEN_TELEGRAM")
+url = os.getenv("BACKEND_ADRESS")
+volume_path = os.getenv("VOLUME_ADRESS")
 
 bot = telebot.TeleBot(api_token, parse_mode="HTML")
 
