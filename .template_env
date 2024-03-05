@@ -6,3 +6,5 @@ VOLUME_ADRESS="../../data/user_data/"
 
 API_TOKEN_TELEGRAM ="YOUR_TG_API_KEY"
 BACKEND_ADRESS="http://consumer-fastapi:8000/"
+
+MODE="DEV" / "PROD" - choose which one
