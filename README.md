@@ -30,19 +30,22 @@ image
 
 ### Установка через самостоятельную сборку контейнеров:
 
-
-1. Клонировать репозиторий
-2. Создать **.env** файл по примеру **.template_env** [^2]
-3. Занести необходимую информацию в .env (токен Бота, настройки при необходимости)
-4. Собрать проект через    <code>docker compose build</code> 
-5. Запустить проект через    <code>docker compose up</code>
+0. **Запулить основной python image для сборки контейнеров: <code>docker pull ayyyoshii/base_python:style</code>
+1. Переименовать python image: <code>docker tag ayyyoshii/base_python:style base_python/1</code>
+2. Клонировать репозиторий
+3. Создать **.env** файл по примеру **.template_env** [^2]
+4. Занести необходимую информацию в .env (токен Бота, настройки при необходимости)
+5. Собрать проект через    <code>docker compose build</code> 
+6. Запустить проект через    <code>docker compose up</code>
 
 
 ### Установка через docker-hub:
 
-1. Создать **.env** файл по примеру **.template_env** [^2]
-2. Скопировать **compose.yaml** [^1] файл 
-3. Изменить файл **compose.yaml**:
+0. **Запулить основной python image для сборки контейнеров: <code>docker pull ayyyoshii/base_python:style</code>
+1. Переименовать python image: <code>docker tag ayyyoshii/base_python:style base_python/1</code>
+2. Создать **.env** файл по примеру **.template_env** [^2]
+3. Скопировать **compose.yaml** [^1] файл 
+4. Изменить файл **compose.yaml**:
     ```yaml
         services:
             consumer-fastapi:
@@ -58,7 +61,7 @@ image
             ...
         ...
     ```
-4. Запулить и запустить контейнеры через <code>docker compose up</code>
+5. Запустить контейнеры через <code>docker compose up</code>
 
 # Photomaker модель:
 
