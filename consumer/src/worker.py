@@ -29,9 +29,6 @@ def picture(foldername):
             encoded_strings_arr.append(encoded_string)
     return encoded_strings_arr
 
-def picture_prod():
-    return
-
 ### IN-DEV: for further pay-as-you-go usage
 # def image_grid(imgs, rows, cols, size_after_resize):
 #     assert len(imgs) == rows*cols
@@ -62,6 +59,7 @@ if mode == "PROD":
         use_safetensors=True, 
         variant="fp16"
     ).to(device)
+    pipe.enable_vae_slicing()
 
 
     ### PHOTOMAKER CHECKPOINT LOADING
