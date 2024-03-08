@@ -7,6 +7,9 @@ services:
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=${REDIS_PORT}
       - VOLUME_ADRESS=${VOLUME_ADRESS}
+      - PHOTOMAKER_PATH=${PHOTOMAKER_PATH}
+      - BASE_MODEL_PATH=${BASE_MODEL_PATH}
+      - MODE=${MODE}
     build: consumer
     volumes:
       - user_data:/data/user_data
