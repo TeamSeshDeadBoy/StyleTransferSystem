@@ -4,7 +4,9 @@ REDIS_HOST="redis"
 REDIS_PORT="6379"
 VOLUME_ADRESS="../../data/user_data/"
 
-API_TOKEN_TELEGRAM ="YOUR_TG_API_KEY"
-BACKEND_ADRESS="http://consumer-fastapi:8000/"
+API_TOKEN_TELEGRAM ="YOUR_TG_API_KEY" # TG Key
+BACKEND_ADRESS="http://consumer-fastapi:8000/" # composition adress
+PHOTOMAKER_PATH="/data/models/models--TencentARC--PhotoMaker/snapshots/3602d02ba7cc99ce8886e24063ed10e4f2510c84/photomaker-v1.bin" # mounted volume cached Photomaker weights
+BASE_MODEL_PATH="SG161222/RealVisXL_V3.0" # Can be changed to hf-hosted models
 
-MODE="DEV" / "PROD" - choose which one
+MODE="DEV" / "PROD" # choose which one
