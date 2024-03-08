@@ -11,6 +11,13 @@ services:
       - BASE_MODEL_PATH=${BASE_MODEL_PATH}
       - MODE=${MODE}
     build: consumer
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     volumes:
       - user_data:/data/user_data
       - models:/data/models
@@ -36,3 +43,5 @@ volumes:
     driver: local
   models:
     driver: local
+
+    
