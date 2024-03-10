@@ -1,5 +1,5 @@
 # StyleTransfer - Photomaker bot
-**StyleTransfer - Генерация изображений с помощью Telegram Bot и AI-модели Photomaker**
+**StyleTransfer - Генерация изображений с помощью Telegram Bot и DL-модели Photomaker**
    
 ![image](https://github.com/TeamSeshDeadBoy/StyleTransferSystem/assets/57834332/a2c7055e-4e8d-4359-a8c6-02162f180561)
 
