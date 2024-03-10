@@ -3,8 +3,6 @@
    
 <hr></hr>
 ![image](https://github.com/TeamSeshDeadBoy/StyleTransferSystem/assets/57834332/a2c7055e-4e8d-4359-a8c6-02162f180561)
-![Без имени-1](https://github.com/TeamSeshDeadBoy/StyleTransferSystem/assets/57834332/088be3d8-42cd-4bb1-839a-0f657514df7c)
-
 <hr></hr>
 
 Проект состоит из **трех** модулей, обернутых в docker-container:           
