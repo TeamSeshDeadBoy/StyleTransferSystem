@@ -2,7 +2,7 @@
 **StyleTransfer - Генерация изображений с помощью Telegram Bot и AI-модели Photomaker**
    
 <hr></hr>
-image
+![Imgur](https://imgur.com/958ngMM)
 <hr></hr>
 
 Проект состоит из **трех** модулей, обернутых в docker-container:           
